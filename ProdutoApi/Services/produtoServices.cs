@@ -2,6 +2,7 @@
 using ProdutoApi.interfaces;
 using System.Security.Cryptography.X509Certificates;
 namespace ProdutoApi.Services
+    using ProdutoApi.models;
 {
     public class ProdutoServices : IProdutoService
 
@@ -12,24 +13,16 @@ namespace ProdutoApi.Services
             _repository = repository;
         }
 
-        public async Task<ProdutoResponseDTO> CreateProdutoAsync(ProdutoRequestDTO produtoRequestDTO)
-
-        {  var produto = new Produto()
+       public async Task<ProdutoResponseDto> CreatProdutoAsync(ProdutoRequestDto produtoRequest)>
         {
-            Nome = produtoRequestDTO.Nome,
-            Preco = produtoRequestDTO.Preco,
-            Quantidade = produtoRequestDTO.Quantidade,
-            Ativo = produtoRequestDTO.Ativo ?? true
-        };
-
-               public async Task<bool> DeleteProdutoAsync(int produtoId)
+        var produto = new Produto
         { 
-            if (produtoId <= 0)
-            {
-                throw new ArgumentException("O ID do produto deve ser maior que zero.", nameof(produtoId));
-            } return await _repository.DeletAsync(produtoId);
+            Nome = produtoRequest.Nome,
+            Preco = produtoRequest.Preco,
+            Quantidade = produtoRequest.Quantidade,
+            Ativo = produtoRequest.Ativo ?? true
+        };
+       
 
 
-            {
-            
-}
+

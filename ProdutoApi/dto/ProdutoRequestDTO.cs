@@ -1,6 +1,6 @@
 ﻿namespace ProdutoApi.dto
 {
-    public class ProdutoRequestDTO
+    public class ProdutoRequestDto
     {
 
         public string Nome { get; set; } = string.Empty;

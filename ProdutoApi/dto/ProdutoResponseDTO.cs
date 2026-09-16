@@ -1,6 +1,6 @@
 ﻿namespace ProdutoApi.dto
 {
-    public class ProdutoResponseDTO
+    public class ProdutoResponseDto
     {
 
         public int Id { get; set; }
